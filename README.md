@@ -1,4 +1,7 @@
 ## Hi there 👋
+### My name is Khan C
+
+> Today's wether is warm.
 
 <!--
 **byKhanc/byKhanc** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
