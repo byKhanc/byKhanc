@@ -20,3 +20,22 @@
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=byKhanc&show_icons=true&theme=radical)
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=byKhanc&layout=compact&theme=radical)
+
+## 기술 스택
+### gitihub 스탯
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=byKhanc&show_icons=true&theme=radical)
+### 많이 사용한 언어
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=byKhanc&layout=compact&theme=radical)
+### 연속 커밋
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=byKhanc&theme=radical)
+### 최근 블로그 포스트
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+### 방문자 카운트
+![Visitor Count](https://profile-counter.glitch.me/byKhanc/count.svg)
+### 테이블 정렬
+| 기술       | 수준       | 경험 |
+| ---------- | ---------- | ---- |
+| JavaScript | ⭐⭐⭐⭐⭐ | 3년  |
+| React      | ⭐⭐⭐⭐   | 2년  |
