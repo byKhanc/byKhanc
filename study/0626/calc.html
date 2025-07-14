@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>계산기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .calculator {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+  .display {
+    background-color: #222;
+    color: #fff;
+    font-size: 2em;
+    padding: 20px;
+    text-align: right;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+  }
+
+  button {
+    padding: 20px;
+    font-size: 1.5em;
+    background-color: #f9f9f9;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #e0e0e0;
+  }
+
+  .equal {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+</style>
+<body>    
+  <div class="calculator">
+    <div class="display">0</div>
+    <div class="buttons">
+      <button>C</button>
+      <button>←</button>
+      <button>%</button>
+      <button>/</button>
+
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>*</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>-</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>+</button>
+
+      <button>0</button>
+      <button>.</button>
+      <button class="equal">=</button>      
+    </div>
+  </div>
+  <script>
+    const display = document.querySelector('.display');
+    const buttons = document.querySelectorAll('.buttons button');
+    let currentInput = '';
+    let operator = '';
+    let firstOperand = null;
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const value = button.textContent;
+
+        if (value === 'C') {
+          currentInput = '';
+          operator = '';
+          firstOperand = null;
+          display.textContent = '0';
+        } else if (value === '←') {
+          currentInput = currentInput.slice(0, -1);
+          display.textContent = currentInput || '0';
+        } else if (value === '=') {
+          if (firstOperand !== null && operator && currentInput) {
+            const secondOperand = parseFloat(currentInput);
+            const result = calculate(firstOperand, secondOperand, operator);
+            display.textContent = result;
+            currentInput = '';
+            operator = '';
+            firstOperand = null;
+          }
+        } else if (['+', '-', '*', '/'].includes(value)) {
+          if (currentInput) {
+            firstOperand = parseFloat(currentInput);
+            operator = value;
+            currentInput = '';
+          }
+        } else {
+          currentInput += value;
+          display.textContent = currentInput;
+        }
+      });
+    });
+
+    function calculate(a, b, op) {
+      switch (op) {
+        case '+': return a + b;
+        case '-': return a - b;
+        case '*': return a * b;
+        case '/': return a / b;
+        default: return b;
+      }
+    }
+
+
+  </script>
+</body>
+</html>

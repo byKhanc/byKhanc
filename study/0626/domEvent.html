@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돔이벤트 예제</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .pyramid {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            // console.log(event); // 이벤트 객체를 콘솔에 출력
+            console.log("offsetTop:", character.offsetTop);
+            console.log("offsetLeft:", character.offsetLeft);
+            if (event.key === "ArrowUp") {
+              character.style.top = (character.offsetTop - 10) + "px";
+            } else if (event.key === "ArrowDown") {
+                character.style.top = (character.offsetTop + 10) + "px";
+            } else if (event.key === "ArrowLeft") {
+                character.style.left = (character.offsetLeft - 10) + "px";
+            } else if (event.key === "ArrowRight") {
+                character.style.left = (character.offsetLeft + 10) + "px";  
+            }
+        });
+    </script>
+</html>
