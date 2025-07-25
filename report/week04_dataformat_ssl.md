@@ -46,7 +46,6 @@ courses:
   - 컴퓨터 과학
   - 데이터베이스
 
----
 
 HTTPS, SSL 인증서 기초
 HTTPS (Hypertext Transfer Protocol Secure)
